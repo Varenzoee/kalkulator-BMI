@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "poppins";
+    }
+
+    .calculator {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 600px;
+        flex-wrap: wrap;
+        color: rgb(32, 32, 32);
+    }
+
+    .title h1 {
+        text-align: center;
+        margin-bottom: 14px;
+        font-size: 32px;
+    }
+
+    .title span {
+        margin-bottom: 24px;
+    }
+</style>
+
+<body>
+    <section class="calculator">
+        <div class="title">
+            <h1>Check your BMI</h1>
+            <span>Enter your weight and height below to check your BMI results</span>
+            <div class="input">
+                <div id="weight">
+                    <label for="">Put your weight in here (KG)</label>
+                    <input type="number">
+                </div>
+                <div id="height">
+                    <label for="">And your height in care (CM)</label>
+                    <input type="number">
+                </div>
+            </div>
+            <button type="button" id="BMI"">Calculate BMI</button>
+            <div class=" result">
+                <span>Your BMI is</span>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('BMI').addEventListener('click', Calculate)
+
+        function Calculate() {
+
+            var inputweight = document.getElementById('weight').value
+            var inputheight = document.getElementById('height').value
+            var weight = inputweight
+            var height = inputheight
+            var rumus = weight / (167 / 100) ^ 2
+
+        }
+
+
+    </script>
+</body>
+
+</html>
