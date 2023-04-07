@@ -44,33 +44,50 @@
             <h1>Check your BMI</h1>
             <span>Enter your weight and height below to check your BMI results</span>
             <div class="input">
-                <div id="weight">
-                    <label for="">Put your weight in here (KG)</label>
-                    <input type="number">
+                <div>
+                    <label for="">Put your weight in here (KG)</label><br>
+                    <input type="numbs" id="weight">
                 </div>
-                <div id="height">
-                    <label for="">And your height in care (CM)</label>
-                    <input type="number">
+                <div>
+                    <label for="">And your height in care (CM)</label><br>
+                    <input type="numbs" id="height">
                 </div>
             </div>
-            <button type="button" id="BMI"">Calculate BMI</button>
+            <button type="button" onclick="Calculate()">Calculate BMI</button>
             <div class=" result">
                 <span>Your BMI is</span>
-        </div>
+                <span id="hasil"></span>
+                <span>which means You are</span>
+                <span id="kategori"></span>
+            </div>
     </section>
 
     <script>
-        document.getElementById('BMI').addEventListener('click', Calculate)
 
+
+        // console.log(inputheight)
         function Calculate() {
-
             var inputweight = document.getElementById('weight').value
             var inputheight = document.getElementById('height').value
             var weight = inputweight
             var height = inputheight
             var rumus = weight / (167 / 100) ^ 2
 
+            document.getElementById('hasil').innerHTML = rumus
+
+            var kategori = ''
+
+            if (rumus < 18.5) {
+                kategori = 'Underweight'
+            } else if (18.5 <= rumus && rumus <= 24.9)
+                kategori = 'Normal weight '
+            else if (25 <= rumus && rumus <= 29.9)
+                kategori = 'Overweight'
+            else kategori = 'Obesity'
+
+            document.getElementById('kategori').innerHTML = kategori
         }
+
 
 
     </script>
