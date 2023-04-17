@@ -33,8 +33,24 @@
         font-size: 32px;
     }
 
-    .title span {
-        margin-bottom: 24px;
+    .input label {
+        display: inline-block;
+        margin: 15px 0;
+    }
+
+    .input input {
+        padding: 5px 0;
+        border-color: rgb(90, 90, 90);
+        border-radius: 4px;
+    }
+
+    button {
+        padding: 6px 16px;
+        margin: 20px 0;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 4px;
     }
 </style>
 
@@ -42,23 +58,23 @@
     <section class="calculator">
         <div class="title">
             <h1>Check your BMI</h1>
-            <span>Enter your weight and height below to check your BMI results</span>
+            <p style="margin-bottom: 24px;">Enter your weight and height below to check your BMI results</p>
             <div class="input">
                 <div>
                     <label for="">Put your weight in here (KG)</label><br>
-                    <input type="numbs" id="weight">
+                    <input type="num" id="weight" placeholder=" KG" size="60" required>
                 </div>
                 <div>
                     <label for="">And your height in care (CM)</label><br>
-                    <input type="numbs" id="height">
+                    <input type="num" id="height" placeholder=" CM" size="60" required>
                 </div>
             </div>
             <button type="button" onclick="Calculate()">Calculate BMI</button>
             <div class=" result">
-                <span>Your BMI is</span>
-                <span id="hasil"></span>
-                <span>which means You are</span>
-                <span id="kategori"></span>
+                <span>Your BMI is ??</span>
+                <span id="hasil" style="font-weight: bold;"></span>
+                <span>which means You are ??</span>
+                <span id="kategori" style="font-weight: bold;"></span>
             </div>
     </section>
 
@@ -86,6 +102,8 @@
             else kategori = 'Obesity'
 
             document.getElementById('kategori').innerHTML = kategori
+
+
         }
 
 
